@@ -380,114 +380,7 @@
   .toast.show{ opacity:1; transform:translate(-50%, 0); }
 
   @media (min-width:640px){
-    .cart-sheet, .product-modal, .promo-modal{ right:18px; left:auto; bottom:18px; border-radius:20px; }
-  }
-
-  /* ---------- PROMOÇÃO DO DIA ---------- */
-  @keyframes promoPulse{
-    0%{ box-shadow:0 0 0 0 rgba(212,168,67,.55); }
-    70%{ box-shadow:0 0 0 16px rgba(212,168,67,0); }
-    100%{ box-shadow:0 0 0 0 rgba(212,168,67,0); }
-  }
-  @keyframes promoBounce{
-    0%, 84%, 100%{ transform:translateY(0); }
-    90%{ transform:translateY(-4px); }
-    95%{ transform:translateY(0); }
-  }
-  .fab-promo{
-    position:fixed; left:18px; bottom:18px; z-index:71;
-    background:linear-gradient(135deg, #F0CD7A, var(--gold));
-    color:#241a02; border:none; border-radius:999px;
-    padding:14px 18px; display:flex; align-items:center; gap:8px;
-    font-weight:800; font-size:14px; letter-spacing:.2px;
-    box-shadow:0 10px 26px rgba(212,168,67,.5);
-    animation: promoPulse 2.4s infinite;
-    transition:transform .15s ease;
-  }
-  .fab-promo .fab-promo-icon{ animation: promoBounce 2.4s infinite; display:inline-block; }
-  .fab-promo:active{ transform:scale(.94); }
-
-  .promo-backdrop{
-    position:fixed; inset:0; background:rgba(0,0,0,.65); z-index:96;
-    opacity:0; pointer-events:none; transition:opacity .2s ease;
-  }
-  .promo-backdrop.show{ opacity:1; pointer-events:auto; }
-
-  .promo-modal{
-    position:fixed; left:0; right:0; bottom:0; z-index:97;
-    background:var(--bg); border-top:1px solid rgba(212,168,67,.3);
-    border-radius:20px 20px 0 0; box-shadow:0 -10px 40px rgba(0,0,0,.6);
-    max-width:560px; margin:0 auto;
-    transform:translateY(105%); transition:transform .3s cubic-bezier(.32,.72,0,1);
-    max-height:90vh; display:flex; flex-direction:column;
-  }
-  .promo-modal.show{ transform:translateY(0); }
-  .promo-modal-head{
-    display:flex; align-items:center; justify-content:space-between; gap:12px;
-    padding:18px 20px 14px;
-    background: linear-gradient(180deg, rgba(212,168,67,.14), transparent);
-    border-bottom:1px solid var(--border);
-  }
-  .promo-modal-head h3{
-    margin:0; font-size:18px; font-weight:800;
-    display:flex; align-items:center; gap:8px;
-  }
-  .promo-modal-head p{ margin:4px 0 0; font-size:12.5px; color:var(--muted); }
-  .promo-close{
-    background:var(--card-2); border:1px solid var(--border); color:var(--text);
-    width:32px; height:32px; border-radius:50%; font-size:15px; flex-shrink:0;
-    display:flex; align-items:center; justify-content:center;
-  }
-  .promo-modal-body{ overflow-y:auto; padding:16px 20px calc(24px + env(safe-area-inset-bottom)); }
-
-  .promo-card{
-    position:relative; overflow:hidden;
-    background:var(--card); border:1px solid rgba(212,168,67,.28); border-radius:16px;
-    padding:16px 16px 14px; margin-bottom:14px;
-    box-shadow:0 8px 22px rgba(0,0,0,.35);
-  }
-  .promo-card::before{
-    content:""; position:absolute; top:0; left:0; right:0; height:3px;
-    background:linear-gradient(90deg, var(--red), var(--gold));
-  }
-  .promo-card:last-child{ margin-bottom:0; }
-  .promo-badge-today{
-    position:absolute; top:14px; right:14px;
-    background:var(--red); color:#fff; font-size:10.5px; font-weight:800;
-    padding:4px 10px; border-radius:999px; letter-spacing:.6px;
-    box-shadow:0 4px 12px rgba(204,18,18,.45);
-  }
-  .promo-card h4{
-    margin:0 6px 8px 0; font-size:16.5px; font-weight:800; color:var(--gold);
-    padding-right:64px; line-height:1.3;
-  }
-  .promo-items{ list-style:none; margin:0 0 12px; padding:0; display:flex; flex-direction:column; gap:4px; }
-  .promo-items li{
-    font-size:13px; color:var(--text); line-height:1.5;
-    display:flex; align-items:flex-start; gap:6px;
-  }
-  .promo-items li::before{ content:"🍣"; font-size:11px; flex-shrink:0; margin-top:1px; }
-  .promo-valid{
-    font-size:11.5px; color:var(--muted); margin:0 0 12px;
-    display:flex; align-items:center; gap:5px;
-  }
-  .promo-price-row{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
-  .promo-price-old{ font-size:13px; color:var(--muted); text-decoration:line-through; }
-  .promo-price-new{ font-size:23px; font-weight:800; color:var(--gold); }
-  .promo-save{
-    font-size:11px; font-weight:700; color:#8fe3a3; background:rgba(63,191,95,.12);
-    border:1px solid rgba(63,191,95,.3); padding:2px 8px; border-radius:999px;
-  }
-  .promo-add-btn{
-    width:100%; background:var(--red); color:#fff; border:none; padding:12px; border-radius:10px;
-    font-weight:800; font-size:14px; box-shadow:0 8px 20px rgba(204,18,18,.35);
-    transition:.15s ease;
-  }
-  .promo-add-btn:active{ transform:scale(.97); }
-
-  @media (max-width:420px){
-    .fab-promo{ padding:14px; }
-    .fab-promo .fab-promo-text{ display:none; }
+    .cart-sheet, .product-modal{ right:18px; left:auto; bottom:18px; border-radius:20px; }
   }
 </style>
 </head>
@@ -538,10 +431,6 @@
 
 <button class="fab-cart" id="fabCart">
   🛒 <span id="fabCartLabel">Ver carrinho</span>
-</button>
-
-<button class="fab-promo" id="fabPromo" aria-haspopup="dialog" aria-label="Ver promoções do dia">
-  <span class="fab-promo-icon">🔥</span><span class="fab-promo-text">Promoções 🔥</span>
 </button>
 
 <footer>
@@ -614,21 +503,6 @@
   </div>
 </div>
 
-<div class="promo-backdrop" id="promoBackdrop"></div>
-
-<div class="promo-modal" id="promoModal" role="dialog" aria-label="Promoções do dia">
-  <div class="promo-modal-head">
-    <div>
-      <h3>🔥 Promoção do Dia</h3>
-      <p>Combos especiais por tempo limitado, hoje.</p>
-    </div>
-    <button class="promo-close" id="promoClose" aria-label="Fechar">✕</button>
-  </div>
-  <div class="promo-modal-body" id="promoModalBody">
-    <!-- preenchido via JS: cards de promoção -->
-  </div>
-</div>
-
 <script src="data.js"></script>
 <script>
 /* ============================================================
@@ -648,42 +522,6 @@ const HORARIOS = {
 };
 
 const CART_STORAGE_KEY = "sushigarden_cart_v1";
-
-/* ============================================================
-   PROMOÇÃO DO DIA (combos fictícios para o protótipo)
-   Cada promoção é tratada como um "item" de carrinho normal —
-   catId fixo PROMO_CAT_ID + nome — reaproveitando increaseQty/
-   decreaseQty/removeFromCart/cartTotal/sendToWhatsApp sem alterá-los.
-   ============================================================ */
-const PROMO_CAT_ID = "promocoes";
-const PROMO_FALLBACK_IMG = fallbackImg("🔥", "Promoção");
-
-const PROMOCOES = [
-  {
-    nome: "Combo Happy Hour",
-    itens: ["8 un. Uramaki Filadelfia", "2 Temakis de Salmão", "2 Cervejas Eisenbahn"],
-    precoOriginal: 136.00,
-    precoPromo: 99.00,
-    validade: "Válido das 18h às 20h",
-    image: fallbackImg("🍻", "Happy Hour"),
-  },
-  {
-    nome: "Combo Família Garden",
-    itens: ["Combinado Sushi Garden", "Yakissoba Misto", "2 Sucos"],
-    precoOriginal: 330.00,
-    precoPromo: 249.00,
-    validade: "Promoção válida hoje",
-    image: fallbackImg("🍱", "Família Garden"),
-  },
-  {
-    nome: "Promoção Temaki Duplo",
-    itens: ["2 Temakis (sabor à sua escolha)", "1 Refrigerante"],
-    precoOriginal: 97.00,
-    precoPromo: 75.00,
-    validade: "Promoção válida hoje",
-    image: fallbackImg("🌯", "Temaki Duplo"),
-  },
-];
 
 /* ============================================================
    ESTADO
@@ -711,10 +549,6 @@ function saveCart(){
 function itemKey(catId, itemNome){ return catId + "::" + itemNome; }
 
 function findItem(catId, nome){
-  if(catId === PROMO_CAT_ID){
-    const promo = PROMOCOES.find(p => p.nome === nome);
-    return promo ? { nome: promo.nome, preco: promo.precoPromo, desc: promo.itens.join(", "), image: promo.image } : null;
-  }
   const cat = CATEGORIAS.find(c => c.id === catId);
   if(!cat) return null;
   return cat.itens.find(i => i.nome === nome) || null;
@@ -1003,15 +837,9 @@ function renderCartUI(){
   }
 
   body.innerHTML = cart.map(c => {
-    let img;
-    if(c.catId === PROMO_CAT_ID){
-      const promo = PROMOCOES.find(p => p.nome === c.nome);
-      img = (promo && promo.image) || PROMO_FALLBACK_IMG;
-    } else {
-      const cat = CATEGORIAS.find(x => x.id === c.catId);
-      const item = cat ? cat.itens.find(i => i.nome === c.nome) : null;
-      img = (item && item.image) || (cat ? cat.fallback : '');
-    }
+    const cat = CATEGORIAS.find(x => x.id === c.catId);
+    const item = cat ? cat.itens.find(i => i.nome === c.nome) : null;
+    const img = (item && item.image) || (cat ? cat.fallback : '');
     return `
       <div class="cart-item">
         <img src="${img}" alt="${escapeHtml(c.nome)}">
@@ -1249,46 +1077,6 @@ function closeProductModal(){
 }
 
 /* ============================================================
-   MODAL DE PROMOÇÕES DO DIA
-   ============================================================ */
-function renderPromoCards(){
-  const body = document.getElementById('promoModalBody');
-  body.innerHTML = PROMOCOES.map(promo => {
-    const economia = promo.precoOriginal - promo.precoPromo;
-    return `
-      <div class="promo-card">
-        <span class="promo-badge-today">HOJE</span>
-        <h4>${escapeHtml(promo.nome)}</h4>
-        <ul class="promo-items">
-          ${promo.itens.map(i => `<li>${escapeHtml(i)}</li>`).join('')}
-        </ul>
-        <p class="promo-valid">⏰ ${escapeHtml(promo.validade)}</p>
-        <div class="promo-price-row">
-          <span class="promo-price-old">${formatBRL(promo.precoOriginal)}</span>
-          <span class="promo-price-new">${formatBRL(promo.precoPromo)}</span>
-          <span class="promo-save">economize ${formatBRL(economia)}</span>
-        </div>
-        <button class="promo-add-btn" onclick="addPromoToCart('${escapeAttr(promo.nome)}')">Adicionar ao carrinho</button>
-      </div>
-    `;
-  }).join('');
-}
-
-function addPromoToCart(nome){
-  increaseQty(PROMO_CAT_ID, nome);
-  closePromoModal();
-}
-
-function openPromoModal(){
-  document.getElementById('promoModal').classList.add('show');
-  document.getElementById('promoBackdrop').classList.add('show');
-}
-function closePromoModal(){
-  document.getElementById('promoModal').classList.remove('show');
-  document.getElementById('promoBackdrop').classList.remove('show');
-}
-
-/* ============================================================
    ENVIO PARA WHATSAPP
    ============================================================ */
 function sendToWhatsApp(){
@@ -1404,16 +1192,10 @@ function init(){
   document.getElementById('modalPlusBtn').addEventListener('click', () => modalChangeQty(1));
   document.getElementById('modalAddBtn').addEventListener('click', modalAddToCart);
 
-  renderPromoCards();
-  document.getElementById('fabPromo').addEventListener('click', openPromoModal);
-  document.getElementById('promoClose').addEventListener('click', closePromoModal);
-  document.getElementById('promoBackdrop').addEventListener('click', closePromoModal);
-
   document.addEventListener('keydown', (e) => {
     if(e.key === 'Escape'){
       closeProductModal();
       closeCart();
-      closePromoModal();
     }
   });
 }
